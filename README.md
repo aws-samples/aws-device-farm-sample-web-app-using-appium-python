@@ -27,7 +27,7 @@ The Appium Python test packages you upload to Device Farm must be in .zip format
   - Do not create a Python virtualenv with ‘--system-site-packages’ option because it will inherit packages from /usr/lib/pythonx.x/site-packages or wherever your global site-packages directory is. This can lead to you including dependencies in your virtual environment that are not needed by your tests.
   - You should also verify that your tests do not use dependencies that are dependent on native libraries as these native libraries may or may not be present on the instance where these tests run.
   - Install py.test in your virtual environment
-  
+
   An example flow of creating a virtual environment using Python virtualenv would look like:
   ```shell
   $ virtualenv workspace
@@ -52,10 +52,12 @@ The Appium Python test packages you upload to Device Farm must be in .zip format
   ```shell
   $ pip freeze > requirements.txt
   ```
+
 4. Go to your work space and run the following command to generate the wheelhouse/ folder:
   ```shell
   $ pip wheel --wheel-dir wheelhouse -r requirements.txt
   ```
+
 5. You can clean all cached files under your tests/ folder with the following commands:
   ```shell
   $ find . -name '__pycache__' -type d -exec rm -r {} +
@@ -63,6 +65,7 @@ The Appium Python test packages you upload to Device Farm must be in .zip format
   $ find . -name '*.pyo' -exec rm -f {} +
   $ find . -name '*~' -exec rm -f {} +
   ```
+
 6. Zip the tests/ folder, wheelhouse/ folder, and the requirements.txt file into a single archive:
   ```shell
   $ zip -r test_bundle.zip tests/ wheelhouse/ requirements.txt
