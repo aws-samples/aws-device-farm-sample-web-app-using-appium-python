@@ -27,7 +27,7 @@ The Appium Python test packages you upload to Device Farm must be in .zip format
   - Do not create a Python virtualenv with ‘--system-site-packages’ option because it will inherit packages from /usr/lib/pythonx.x/site-packages or wherever your global site-packages directory is. This can lead to you including dependencies in your virtual environment that are not needed by your tests.
   - You should also verify that your tests do not use dependencies that are dependent on native libraries as these native libraries may or may not be present on the instance where these tests run.
   - Install py.test in your virtual environment
-
+  
   An example flow of creating a virtual environment using Python virtualenv would look like:
   ```shell
   $ virtualenv workspace
