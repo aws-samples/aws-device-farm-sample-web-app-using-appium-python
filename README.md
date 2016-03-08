@@ -1,5 +1,5 @@
 # Appium Web tests for AWS Device Farm
-This test demonstrates how to test a web application using AWS Device Farm and Appium Python. You can use these tests as a reference for your own AWS Device Farm Appium Python tests
+This test demonstrates how to test a web application using AWS Device Farm and Appium Python. You can use these tests as a reference for your own AWS Device Farm Appium Python tests.
 
 # Background
 What Is Appium Python?
@@ -38,7 +38,6 @@ The Appium Python test packages you upload to Device Farm must be in .zip format
 
 2. Store all python test scripts under the tests/ folder in your work space.
   ```shell
-
   - workspace
     |
     - tests/ (your tests go here)
@@ -88,7 +87,7 @@ The Appium Python test packages you upload to Device Farm must be in .zip format
 ## Upload and Run your Web Application Appium Python Tests
 Use the Device Farm console to upload your tests:
 
-1. Sign in to the Device Farm console at https://console.aws.amazon.com/devicefarm
+1. [Sign in to the Device Farm console.](https://console.aws.amazon.com/devicefarm)
 
 2. If you see the AWS Device Farm console home page, choose <b>Get started.</b>
 
@@ -98,10 +97,10 @@ Use the Device Farm console to upload your tests:
 
 5. On the <b>Choose your application</b> page, choose <b>Web Application (the HTML5 button)</b>
 
-6. Provide a name for your run in the Run name field.
+6. Provide a name for your run in the <b>Run</b> name field.
 
 7. Configure your test by choosing <b>Appium Python</b>.
 
-8. Next, choose Upload to upload your .zip file. Device Farm processes your .zip file before continuing.
+8. Next, choose <b>Upload</b> to upload your .zip file. Device Farm processes your .zip file before continuing.
 
-9. Choose <b>Next step</b>, and then complete the remaining on-screen instructions to select devices and start the run
+9. Choose <b>Next step</b>, and then complete the remaining on-screen instructions to select devices and start the run.
