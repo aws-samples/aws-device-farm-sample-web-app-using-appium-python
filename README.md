@@ -4,17 +4,17 @@ This test demonstrates how to test a web application using AWS Device Farm and A
 # Background
 What Is Appium Python?
 
-Appium is an open-source tool for automating native, mobile web, and hybrid applications on platforms such as Android and iOS. For more information, see About Appium.
+Appium is an open-source tool for automating native, mobile web, and hybrid applications on platforms such as Android and iOS. For more information, see [About Appium](http://appium.io/slate/en/master/?ruby#about-appium).
 
 # Getting started
-1. Follow the official Appium getting started guide and install the Appium server and dependencies.
+1. Follow the [official Appium getting started guide](http://appium.io/slate/en/tutorial/android.html?java#getting-started-with-appium) and install the Appium server and dependencies.
 
   <b>AWS Device Farm supports Appium version 1.4.10. Using a different version locally may cause unexpected results when running Appium tests on AWS Device Farm.</b>
 
 2. In order to use 1.4.10, download Appium through NPM with this command:
-```shell
-npm install -g appium@1.4.10
-```
+  ```shell
+  npm install -g appium@1.4.10
+  ```
 3. Verify that you have Appium installed with this command: appium -v You should get "1.4.10" as the output
 
 ## Steps to package your tests
@@ -22,7 +22,7 @@ The Appium Python test packages you upload to Device Farm must be in .zip format
 
 <b>Note:</b> The instructions below are based for Linux x86_64 and Mac. In the current scheme of things Device Farm requires that the packaging of your Appium Python Tests be done on <b><u>Linux x86_64 if your tests contain non-universal wheels dependencies</b></u>. The reason for this is that Python wheel gathers the dependencies, your .whl files under the wheelhouse/ folder, for the platform on which you execute the command. Executing the python wheel command on any platform other than Linux x86_64 would gather the flavor of a non-univesral wheel dependency for that particular platform and may cause undesired effects which most likely will lead to errors while executing your tests on Device Farm
 
-1. It is highly recommended that you set up Python virtualenv for developing and packaging tests so that the unnecessary dependencies are not included in your test package.
+1. It is highly recommended that you set up [Python virtualenv](https://pypi.python.org/pypi/virtualenv) for developing and packaging tests so that the unnecessary dependencies are not included in your test package.
 
   - Do not create a Python virtualenv with ‘--system-site-packages’ option because it will inherit packages from /usr/lib/pythonx.x/site-packages or wherever your global site-packages directory is. This can lead to you including dependencies in your virtual environment that are not needed by your tests.
   - You should also verify that your tests do not use dependencies that are dependent on native libraries as these native libraries may or may not be present on the instance where these tests run.
@@ -37,11 +37,11 @@ The Appium Python test packages you upload to Device Farm must be in .zip format
   ```
 
 2. Store all python test scripts under the tests/ folder in your work space.
-```shell
+  ```shell
   - workspace
     |
     - tests/ (your tests go here)
-```
+  ```
 
   Make sure you have py.test installed in your virtual environment and test cases are discoverable by the following command which you should run from your virtual environment ‘workspace' folder. Make sure the output of py.test command below shows you the tests that you want to execute on Device Farm
   ```shell
@@ -49,27 +49,30 @@ The Appium Python test packages you upload to Device Farm must be in .zip format
   ```
 
 3. Go to your work space and run the following command to generate the requirements.txt file.
-```shell
-$ pip freeze > requirements.txt
-```
+  ```shell
+  $ pip freeze > requirements.txt
+  ```
+
 4. Go to your work space and run the following command to generate the wheelhouse/ folder:
-```shell
-$ pip wheel --wheel-dir wheelhouse -r requirements.txt
-```
+  ```shell
+  $ pip wheel --wheel-dir wheelhouse -r requirements.txt
+  ```
+
 5. You can clean all cached files under your tests/ folder with the following commands:
-```shell
-$ find . -name '__pycache__' -type d -exec rm -r {} +
-$ find . -name '*.pyc' -exec rm -f {} +
-$ find . -name '*.pyo' -exec rm -f {} +
-$ find . -name '*~' -exec rm -f {} +
-```
+  ```shell
+  $ find . -name '__pycache__' -type d -exec rm -r {} +
+  $ find . -name '*.pyc' -exec rm -f {} +
+  $ find . -name '*.pyo' -exec rm -f {} +
+  $ find . -name '*~' -exec rm -f {} +
+  ```
+
 6. Zip the tests/ folder, wheelhouse/ folder, and the requirements.txt file into a single archive:
-```shell
-$ zip -r test_bundle.zip tests/ wheelhouse/ requirements.txt
-```
+  ```shell
+  $ zip -r test_bundle.zip tests/ wheelhouse/ requirements.txt
+  ```
 
 7. Your workspace would eventually look like:
-```shell
+  ```shell
     - workspace
       |
        - tests/
@@ -79,12 +82,12 @@ $ zip -r test_bundle.zip tests/ wheelhouse/ requirements.txt
        - requirements.txt
       |
        - wheelhouse/
-```
+  ```
 
 ## Upload and Run your Web Application Appium Python Tests
 Use the Device Farm console to upload your tests:
 
-1. Sign in to the Device Farm console at https://console.aws.amazon.com/devicefarm.
+1. Sign in to the Device Farm console at https://console.aws.amazon.com/devicefarm
 
 2. If you see the AWS Device Farm console home page, choose <b>Get started.</b>
 
