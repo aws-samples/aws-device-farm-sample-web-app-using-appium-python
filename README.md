@@ -73,15 +73,15 @@ The Appium Python test packages you upload to Device Farm must be in .zip format
 
 7. Your workspace would eventually look like:
   ```shell
-    - workspace
-      |
-       - tests/
-      |
-       - test_bundle.zip
-      |
-       - requirements.txt
-      |
-       - wheelhouse/
+  - workspace
+    |
+     - tests/
+    |
+     - test_bundle.zip
+    |
+     - requirements.txt
+    |
+     - wheelhouse/
   ```
 
 ## Upload and Run your Web Application Appium Python Tests
