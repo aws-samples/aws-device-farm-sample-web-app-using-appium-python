@@ -38,6 +38,7 @@ The Appium Python test packages you upload to Device Farm must be in .zip format
 
 2. Store all python test scripts under the tests/ folder in your work space.
   ```shell
+
   - workspace
     |
     - tests/ (your tests go here)
@@ -73,15 +74,15 @@ The Appium Python test packages you upload to Device Farm must be in .zip format
 
 7. Your workspace would eventually look like:
   ```shell
-    - workspace
-      |
-       - tests/
-      |
-       - test_bundle.zip
-      |
-       - requirements.txt
-      |
-       - wheelhouse/
+  - workspace
+    |
+     - tests/
+    |
+     - test_bundle.zip
+    |
+     - requirements.txt
+    |
+     - wheelhouse/
   ```
 
 ## Upload and Run your Web Application Appium Python Tests
